@@ -47,7 +47,104 @@
 </head>
 
 <body>
-
+	<div class="lds-css ng-scope">
+  		<div style="width:100%;height:100%" class="lds-heart">
+    	<div></div>
+    </div>
+	 <style type="text/css">@keyframes lds-heart {
+	  0% {
+	    -webkit-transform: scale(0.85);
+	    transform: scale(0.85);
+	  }
+	  5% {
+	    -webkit-transform: scale(1);
+	    transform: scale(1);
+	  }
+	  39% {
+	    -webkit-transform: scale(0.75);
+	    transform: scale(0.75);
+	  }
+	  45% {
+	    -webkit-transform: scale(0.9);
+	    transform: scale(0.9);
+	  }
+	  60% {
+	    -webkit-transform: scale(0.85);
+	    transform: scale(0.85);
+	  }
+	  100% {
+	    -webkit-transform: scale(0.8);
+	    transform: scale(0.8);
+	  }
+	}
+	@-webkit-keyframes lds-heart {
+	  0% {
+	    -webkit-transform: scale(0.85);
+	    transform: scale(0.85);
+	  }
+	  5% {
+	    -webkit-transform: scale(1);
+	    transform: scale(1);
+	  }
+	  39% {
+	    -webkit-transform: scale(0.75);
+	    transform: scale(0.75);
+	  }
+	  45% {
+	    -webkit-transform: scale(0.9);
+	    transform: scale(0.9);
+	  }
+	  60% {
+	    -webkit-transform: scale(0.85);
+	    transform: scale(0.85);
+	  }
+	  100% {
+	    -webkit-transform: scale(0.8);
+	    transform: scale(0.8);
+	  }
+	}
+	.lds-heart {
+	  z-index: 100;
+	  margin: 100px auto;
+	  position: relative;
+	  -webkit-animation: lds-heart 1s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+	  animation: lds-heart 1s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+	}
+	.lds-heart div {
+	  top: 72px;
+	  left: 60px;
+	  position: absolute;
+	  width: 80px;
+	  height: 80px;
+	  background: #f85c65;
+	  -webkit-transform: rotate(45deg);
+	  transform: rotate(45deg);
+	}
+	.lds-heart div:after,
+	.lds-heart div:before {
+	  content: " ";
+	  position: absolute;
+	  display: block;
+	  width: 80px;
+	  height: 80px;
+	  background: #f85c65;
+	}
+	.lds-heart div:before {
+	  left: -52px;
+	  border-radius: 50% 0 0 50%;
+	}
+	.lds-heart div:after {
+	  top: -52px;
+	  border-radius: 50% 50% 0 0;
+	}
+	.lds-heart {
+	  width: 200px !important;
+	  height: 200px !important;
+	  -webkit-transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+	  transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+	}
+	</style>
+</div>
     <!-- Content -->
     <section class="article-container">
 <!-- Back Home -->
@@ -110,6 +207,17 @@
 <script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
+	var loading = document.querySelector('.lds-css');
+	document.onreadystatechange = function(){
+		console.log('5555');
+		if(document.readystate = 'complete'){
+			console.log('5555');
+			loading.innerHTML = '';
+			document.body.removeChild(loading);
+
+		}
+
+	}
 	console.log('可知小熊座，亦知勾陳一');
 </script>
 
